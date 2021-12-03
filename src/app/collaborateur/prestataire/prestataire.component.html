@@ -1,0 +1,27 @@
+<kendo-tabstrip class="tabstrip">
+    <kendo-tabstrip-tab title="Fiche Collaborateur" [selected]="true">
+      <ng-template kendoTabContent>
+        <p><prestataire-fiche-collab></prestataire-fiche-collab></p>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Contrats">
+      <ng-template kendoTabContent>
+        <p><prestataire-liste-contrats></prestataire-liste-contrats></p>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Accès aux Applications">
+      <ng-template kendoTabContent>
+        <p><prestataire-liste-applications></prestataire-liste-applications></p>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Gestion Comptes">
+        <ng-template kendoTabContent>
+          <p><prestataire-gestion-comptes></prestataire-gestion-comptes></p>
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab title="Périmètre et Section">
+        <ng-template kendoTabContent>
+          <p><prestataire-perimetre-section></prestataire-perimetre-section></p>
+        </ng-template>
+      </kendo-tabstrip-tab>
+  </kendo-tabstrip>

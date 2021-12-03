@@ -1,0 +1,53 @@
+<div class="grid-contrat">
+    <!-- Création du bloc Grid de Kendo qui encadre tous le contenu avec ses paramètres -->
+    <kendo-grid 
+        [kendoGridBinding]="contrats"
+        [resizable]="true"
+        [sortable]="true"
+        [pageable]=true
+        [pageSize]="10">
+
+        <!-- Début création des colonnes du Grid -->
+
+        <!-- Création de la colonne Matricule dans le tableau -->
+        <kendo-grid-column field="typeContrat" title="Type de Contrat">
+        </kendo-grid-column>
+
+        <!-- Création de la colonne Nom dans le tableau -->
+        <kendo-grid-column field="dateDebut" title="Date Début du contrat">
+        </kendo-grid-column>
+
+        <!-- Création de la colonne Prénom dans le tableau -->
+        <kendo-grid-column field="dateFin" title="Date Fin du contrat">
+        </kendo-grid-column>
+
+        <!-- Création de la colonne Date Début dans le tableau -->
+        <kendo-grid-column field="societe" title="Société">
+        </kendo-grid-column>
+        
+
+        <!-- Création de la colonne Date Fin dans le tableau -->
+        <kendo-grid-column field="section" title="Section">
+        </kendo-grid-column>
+
+        <!-- Création de la colonne Type contrat dans le tableau -->
+        <kendo-grid-column field="numContrat" title="N° du Contrat">
+        </kendo-grid-column>
+
+        <!-- Création de la colonne Section dans le tableau -->
+        <kendo-grid-column field="mission" title="Mission">
+        </kendo-grid-column>
+
+        <!-- Création de la colonne Section dans le tableau -->
+        <kendo-grid-column field="fonction" title="Fonction">
+        </kendo-grid-column>
+
+
+        <!-- Fin création des colonnes du Grid -->
+
+        <!-- Modification du text du pager -->
+        <kendo-grid-messages [pagerOf]="'sur'" [pagerItems]="'contrats'">
+        </kendo-grid-messages>
+
+    </kendo-grid>
+</div>

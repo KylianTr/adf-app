@@ -1,0 +1,163 @@
+<!-- dialog -->
+<!-- button bootstrap add collab 
+  <button class="btn btn-primary nav-item mt-3" *ngIf="!opened" (click)="open()">Ajouter un Collaborateur</button>
+-->
+<div class="button-center">
+  <div class="add-collaborateur ">
+    <button kendoButton [primary]="true" look="default" *ngIf="!opened" (click)="open()">Ajouter Collaborateur</button>
+  </div>
+</div>
+    <kendo-dialog
+      title="Ajout d'un Collaborateur"
+      *ngIf="opened"
+      (close)="close('cancel')"
+      [minWidth]="250"
+      [maxWidth]="1000"
+      [minHeight]="125"
+    >
+      <div style="margin: 30px; text-align: center;">
+        <!-- Dialog Content -->
+        <form class="row g-3" [formGroup]="formValue">
+          <div class="col-md-12">
+            <kendo-avatar shape="circle" iconClass="k-icon k-i-user" size="large"></kendo-avatar>
+          </div>
+            <div class="col-md-2 mt-3">
+              <label for="inputEmail4" class="form-label">Matricule</label>
+              <input type="text" formControlName="matricule" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-5">
+              <label for="inputPassword4" class="form-label">Nom</label>
+              <input type="text" formControlName="nom" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-5">
+              <label for="inputAddress" class="form-label">Prénom</label>
+              <input type="text" formControlName="prenom" class="form-control" id="inputAddress">
+            </div>
+            <div class="col-md-6 mt-3">
+              <label for="inputAddress2" class="form-label">Date Début</label>
+              <input type="text" formControlName="dateDebut" class="form-control" id="inputAddress2">
+            </div>
+            <div class="col-md-6 mt-3">
+              <label for="inputCity" class="form-label">Date Fin</label>
+              <input type="text" formControlName="dateFin" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-2 mt-4">
+              <label for="inputState" class="form-label">Type Collaborateur</label>
+              <select formControlName="typeCollaborateur" class="form-select dropdown" aria-label="Default select example">
+                <option value="Salarié">Salarié</option>
+                <option value="Intérimaire">Intérimaire</option>
+                <option value="Prestataire">Prestataire</option>
+              </select>
+            </div>
+            <div class="col-md-5 mt-3">
+              <label for="inputZip" class="form-label">Section</label>
+              <input type="text" formControlName="section" class="form-control" id="inputZip">
+            </div>
+            <div class="col-md-5 mt-3">
+                <label for="inputZip" class="form-label">Société</label>
+                <input type="text" formControlName="societe" class="form-control" id="inputZip">
+              </div>
+          </form>
+        </div>
+      <kendo-dialog-actions>
+        <button kendoButton type="button" id="cancel" (click)="close('no')">Annuler</button>
+        <button kendoButton type="button" (click)="postCollaborateurDetails()" [primary]="true">Ajouter</button>
+      </kendo-dialog-actions>
+    </kendo-dialog>
+
+<!-- Liste Collaborateur Bootstrap 
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Matricule</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Date Début</th>
+            <th scope="col">Date Fin</th>
+            <th scope="col">Type Collaborateur</th>
+            <th scope="col">Section</th>
+            <th scope="col">Société</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let collaborateur of collaborateurData">
+            <td>{{collaborateur.matricule}}</td>
+            <td>{{collaborateur.nom}}</td>
+            <td>{{collaborateur.prenom}}</td>
+            <td>{{collaborateur.dateDebut}}</td>
+            <td>{{collaborateur.dateFin}}</td>
+            <td>{{collaborateur.typeCollaborateur}}</td>
+            <td>{{collaborateur.section}}</td>
+            <td>{{collaborateur.societe}}</td>
+            <td>
+                <button class="btn btn-info">Modifier</button>
+                <a [routerLink]="['collaborateurs', collaborateur.matricule]"><button class="btn btn-danger">Détails</button></a>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+<!-- grid kendo-->
+
+<!-- grid kendo-->
+
+<kendo-grid 
+        [kendoGridBinding]="collaborateurData"
+        [resizable]="true"
+        [filterable]="true" 
+        [sortable]="true"
+        [pageable]=true
+        [pageSize]="10">
+  <kendo-grid-column field="matricule">
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      {{ collaborateur.matricule }}
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="nom">
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      {{ collaborateur.nom }}
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="prenom">
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      {{ collaborateur.prenom }}
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="dateDebut">
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      {{ collaborateur.dateDebut }}
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="dateFin">
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      {{ collaborateur.dateFin }}
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="typeCollaborateur">
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      {{ collaborateur.typeCollaborateur }}
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="section">
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      {{ collaborateur.section }}
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="Société">
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      {{ collaborateur.societe }}
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="Actions">
+    <!-- Suppression du filtre pour cette colonne -->
+    <ng-template kendoGridFilterCellTemplate ></ng-template>
+    <!-- Création d'un bouton Modifier -->
+    <ng-template kendoGridCellTemplate let-collaborateur>
+      <div class="details-collaborateur">
+        <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]"><button kendoButton [primary]="true" look="default" >Afficher détails</button></a>
+    </div>
+    </ng-template>
+</kendo-grid-column>
+</kendo-grid>

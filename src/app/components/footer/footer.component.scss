@@ -1,0 +1,13 @@
+$color-adf: #1E335E;
+ 
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $color-adf;
+}
+
+.footer-color {
+    background-color: $color-adf;
+    color: white;
+}

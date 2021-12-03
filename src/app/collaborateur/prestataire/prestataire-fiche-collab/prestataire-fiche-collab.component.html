@@ -1,0 +1,14 @@
+<div class="avatar">
+    <kendo-avatar shape="circle" icon="user" size="large" class="avatar-align"> </kendo-avatar>
+</div>
+
+<div class="form" *ngFor="let collaborateur of collaborateurData">
+    <kendo-textbox placeholder="{{collaborateur.matricule}}" [clearButton]="true"></kendo-textbox>
+    <kendo-textbox placeholder="{{collaborateur.nom}}" [clearButton]="true"></kendo-textbox>
+    <kendo-textbox placeholder="{{collaborateur.prenom}}" [clearButton]="true"></kendo-textbox>
+    <kendo-textbox placeholder="{{collaborateur.dateDebut}}" [clearButton]="true"></kendo-textbox>
+    <kendo-textbox placeholder="{{collaborateur.dateFin}}" [clearButton]="true"></kendo-textbox>
+    <kendo-textbox placeholder="{{collaborateur.typeCollaborateur}}" [clearButton]="true"></kendo-textbox>
+    <kendo-textbox placeholder="{{collaborateur.section}}" [clearButton]="true"></kendo-textbox>
+    <kendo-textbox placeholder="{{collaborateur.societe}}" [clearButton]="true"></kendo-textbox>
+</div>

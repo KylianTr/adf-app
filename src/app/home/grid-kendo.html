@@ -1,0 +1,133 @@
+<!-- grid kendo-->
+
+<div class="grid-collaborateur">
+    <!-- Création du bloc Grid de Kendo qui encadre tous le contenu avec ses paramètres -->
+    <kendo-grid 
+        [kendoGridBinding]="collaborateurData"
+        [resizable]="true"
+        [filterable]="true" 
+        [sortable]="true"
+        [pageable]=true
+        [pageSize]="10">
+  
+        <!-- Début Excel boutton -->
+        <ng-template kendoGridToolbarTemplate>
+            <button kendoGridExcelCommand icon="file-excel" class="excel-export">Exporter sur Excel</button>
+        </ng-template>
+  
+        <!-- Fin excel boutton -->
+  
+        <!-- Début création des colonnes du Grid -->
+  
+        <!-- Création de la colonne Matricule dans le tableau -->
+        <kendo-grid-column field="matricule" title="Matricule">
+            <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                <!-- Modification du filtre par défault par un filtre String -->
+                <kendo-grid-string-filter-cell
+                  [showOperators]="false"
+                  [column]="column"
+                  [filter]="filter">
+                </kendo-grid-string-filter-cell>
+              </ng-template>
+        </kendo-grid-column>
+  
+        <!-- Création de la colonne Nom dans le tableau -->
+        <kendo-grid-column field="nom" title="Nom">
+            <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                <!-- Modification du filtre par défault par un filtre String -->
+                <kendo-grid-string-filter-cell
+                  [showOperators]="false"
+                  [column]="column"
+                  [filter]="filter">
+                </kendo-grid-string-filter-cell>
+              </ng-template>
+        </kendo-grid-column>
+  
+        <!-- Création de la colonne Prénom dans le tableau -->
+        <kendo-grid-column field="prenom" title="Prénom" filter="date">
+            <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                <!-- Modification du filtre par défault par un filtre String -->
+                <kendo-grid-string-filter-cell
+                  [showOperators]="false"
+                  [column]="column"
+                  [filter]="filter">
+                </kendo-grid-string-filter-cell>
+              </ng-template>
+        </kendo-grid-column>
+  
+        <!-- Création de la colonne Date Début dans le tableau -->
+        <kendo-grid-column field="dateDebut" title="Date Début" filter="date">
+            <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                <!-- Modification du filtre par défault par un filtre Date -->
+                <kendo-grid-date-filter-cell
+                    [showOperators]="false"
+                    [column]="column"
+                    [filter]="filter">
+                </kendo-grid-date-filter-cell>
+            </ng-template>
+        </kendo-grid-column>
+        
+  
+        <!-- Création de la colonne Date Fin dans le tableau -->
+        <kendo-grid-column field="dateFin" title="Date Fin">
+            <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                <!-- Modification du filtre par défault par un filtre Date -->
+                <kendo-grid-date-filter-cell
+                    [showOperators]="false"
+                    [column]="column"
+                    [filter]="filter">
+                </kendo-grid-date-filter-cell>
+            </ng-template>
+        </kendo-grid-column>
+  
+        <!-- Création de la colonne Type Collaborateur dans le tableau -->
+        <kendo-grid-column field="typeCollaborateur" title="Type Collaborateur">
+            <!-- Pas de modification du filtre, version défault -->
+        </kendo-grid-column>
+  
+        <!-- Création de la colonne Section dans le tableau -->
+        <kendo-grid-column field="section" title="Section">
+            <!-- Pas de modification du filtre, version défault -->
+        </kendo-grid-column>
+        
+        <kendo-grid-column field="Afficher" title="Actions">
+            <!-- Suppression du filtre pour cette colonne -->
+            <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+            </ng-template>
+            <!-- Création d'un bouton Modifier -->
+            <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+              <div class="details-collaborateur">
+                <a [routerLink]="'collaborateur/'"><button kendoButton [primary]="true" look="default" >Afficher détails</button></a>
+            </div>
+                <!--  Appel du bouton modifier collaborateur-->
+            </ng-template>
+        </kendo-grid-column>
+  
+  
+        <!-- Fin création des colonnes du Grid -->
+  
+        <!-- Modification du text du pager -->
+        <kendo-grid-messages [pagerOf]="'sur'" [pagerItems]="'collaborateurs'">
+        </kendo-grid-messages>
+  
+        <kendo-grid-excel fileName="ListeCollaborateur.xlsx">
+  
+            <!-- Choix des colonnes export pour excel (la colonne action n'est pas présente ci-dessous car ne doit pas être présente dans le fichier excel) -->
+            <kendo-excelexport-column field="matricule" title="Matricule">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="nom" title="Nom">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="prenom" title="Prénom">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="dateDebut" title="Date Début">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="dateFin" title="Date Fin">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="typeEmploye" title="Type Collaborateur">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="section" title="Section Collaborateur">
+            </kendo-excelexport-column>
+        </kendo-grid-excel>
+  
+    </kendo-grid>
+  </div>
