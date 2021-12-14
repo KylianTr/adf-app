@@ -34,11 +34,22 @@ export class SalarieFicheCollabComponent implements OnInit {
       matricule : [''],
       nom: [''],
       prenom: [''],
+      dateNaiss: [''],
+      sexe: [''],
+      section: [''],
+      codeSAP: [''],
+      societe: [''],
+      typeCollaborateur: [''],
+      societePaye: [''],
       dateDebut: [''],
       dateFin: [''],
-      typeCollaborateur: [''],
-      section: [''],
-      societe: ['']
+      dateEntreeSite: [''],
+      mobile: [''],
+      email: [''],
+      fax: [''],
+      superieurHierarchique: [''],
+      notes: ['']
+
     })
     this.getAllCollaborateur();
   }

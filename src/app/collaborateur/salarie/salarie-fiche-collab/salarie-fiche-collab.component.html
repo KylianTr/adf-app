@@ -1,14 +1,139 @@
-<div class="avatar">
-    <kendo-avatar shape="circle" icon="user" size="large" class="avatar-align"> </kendo-avatar>
-</div>
-
 <div class="form" *ngFor="let collaborateur of collaborateurData">
-    <kendo-textbox placeholder="{{collaborateur.matricule}}" [clearButton]="true"></kendo-textbox>
-    <kendo-textbox placeholder="{{collaborateur.nom}}" [clearButton]="true"></kendo-textbox>
-    <kendo-textbox placeholder="{{collaborateur.prenom}}" [clearButton]="true"></kendo-textbox>
-    <kendo-textbox placeholder="{{collaborateur.dateDebut}}" [clearButton]="true"></kendo-textbox>
-    <kendo-textbox placeholder="{{collaborateur.dateFin}}" [clearButton]="true"></kendo-textbox>
-    <kendo-textbox placeholder="{{collaborateur.typeCollaborateur}}" [clearButton]="true"></kendo-textbox>
-    <kendo-textbox placeholder="{{collaborateur.section}}" [clearButton]="true"></kendo-textbox>
-    <kendo-textbox placeholder="{{collaborateur.societe}}" [clearButton]="true"></kendo-textbox>
+  <div class="avatar">
+    <kendo-avatar shape="circle" icon="user" size="large" class="avatar-align"> </kendo-avatar>
+  </div>
+  <div class="identification">
+    <div class="row2">
+    </div>
+    <div class="identificationRow1">
+      <div class="identificationRow1Label1">
+        <kendo-label text="Matricule Collaborateur"></kendo-label>
+      </div>
+      <div class="identificationRow1Label2">
+        <kendo-label text="Nom"></kendo-label>
+      </div>
+      <div class="identificationRow1Label3">
+        <kendo-label text="Prénom"></kendo-label>
+      </div>
+      <div class="identificationRow1Label4">
+        <kendo-label text="Date de Naissance"></kendo-label>
+      </div>
+      <div class="identificationRow1text1">
+        <kendo-textbox placeholder="{{collaborateur.matricule}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="identificationRow1text2">
+        <kendo-textbox placeholder="{{collaborateur.nom}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="identificationRow1text3">
+        <kendo-textbox placeholder="{{collaborateur.prenom}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="identificationRow1text4">
+        <kendo-textbox placeholder="{{collaborateur.dateNaiss}}" [clearButton]="true"></kendo-textbox>
+      </div>
+    </div>
+    <div class="identification-title">
+      <h3>Identification :</h3>
+    </div>
+    <div class="identificationRow2">
+      <div class="identificationRow2text1">
+        <kendo-textbox placeholder="{{collaborateur.sexe}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="identificationRow2text2">
+        <kendo-textbox placeholder="{{collaborateur.section}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="identificationRow2text3">
+        <kendo-textbox placeholder="{{collaborateur.codeSAP}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="identificationRow2text4">
+        <kendo-textbox placeholder="{{collaborateur.societe}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="identificationRow2Label1">
+        <kendo-label text="Sexe"></kendo-label>
+      </div>
+      <div class="identificationRow2Label2">
+        <kendo-label text="Section"></kendo-label>
+      </div>
+      <div class="identificationRow2Label3">
+        <kendo-label text="Code SAP"></kendo-label>
+      </div>
+      <div class="identificationRow2Label4">
+        <kendo-label text="Société"></kendo-label>
+      </div>
+    </div>
+  </div>
+  <div class="societeDates">
+    <div class="societeDatesTitle">
+      <h3>Société/Dates :</h3>
+    </div>
+    <div class="societeDatesCol1">
+      <div class="societeDatesCol1Label1">
+        <kendo-label text="Type Collaborateur"></kendo-label>
+      </div>
+      <div class="societeDatesCol1text1">
+        <kendo-textbox placeholder="{{collaborateur.typeCollaborateur}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="societeDatesCol1Label2">
+        <kendo-label text="Date Entrée (groupe)"></kendo-label>
+      </div>
+      <div class="societeDatesCol1text2">
+        <kendo-textbox placeholder="{{collaborateur.dateDebut}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="SocieteDatesCol1Label3">
+        <kendo-label text="Date Entrée (site)"></kendo-label>
+      </div>
+      <div class="SocieteDatesCol1text3">
+        <kendo-textbox placeholder="{{collaborateur.dateEntreeSite}}" [clearButton]="true"></kendo-textbox>
+      </div>
+    </div>
+    <div class="SocieteDateCol2">
+      <div class="societeDatesCol2Label1">
+        <kendo-label text="Société de Paye"></kendo-label>
+      </div>
+      <div class="societeDatesCol2text1">
+        <kendo-textbox placeholder="{{collaborateur.societePaye}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="societeDatesCol2Label2">
+        <kendo-label text="Date Sortie (groupe)"></kendo-label>
+      </div>
+      <div class="societeDatesCol2text2">
+        <kendo-textbox placeholder="{{collaborateur.dateFin}}" [clearButton]="true"></kendo-textbox>
+      </div>
+    </div>
+  </div>
+  <div class="coordonnees">
+    <div class="coordonneesTitle">
+      <h3>Coordonnées :</h3>
+    </div>
+    <div class="coordonneesCol1">
+      <div class="coordonneesCol1Label1">
+        <kendo-label text="Mobile"></kendo-label>
+      </div>
+      <div class="coordonneesCol1text1">
+        <kendo-textbox placeholder="0{{collaborateur.mobile}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="coordonneesCol1Label2">
+        <kendo-label text="Fax"></kendo-label>
+      </div>
+      <div class="coordonneesCol1text2">
+        <kendo-textbox placeholder="{{collaborateur.fax}}" [clearButton]="true"></kendo-textbox>
+      </div>
+    </div>
+    <div class="coordonneesCol2">
+      <div class="coordonneesCol2Label1">
+        <kendo-label text="Email"></kendo-label>
+      </div>
+      <div class="coordonneesCol2text1">
+        <kendo-textbox placeholder="{{collaborateur.email}}" [clearButton]="true"></kendo-textbox>
+      </div>
+      <div class="coordonneesCol2Label2">
+        <kendo-label text="Supérieur Hiérarchique"></kendo-label>
+      </div>
+      <div class="coordonneesCol2text2">
+        <kendo-textbox placeholder="{{collaborateur.superieurHierarchique}}" [clearButton]="true"></kendo-textbox>
+      </div>
+    </div>
+    <div class="coordonneesNotes">
+      <kendo-textarea placeholder="{{collaborateur.notes}}"></kendo-textarea>
+    </div>
+  </div>
 </div>

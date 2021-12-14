@@ -1,5 +1,5 @@
 <!-- dialog -->
-<!-- button bootstrap add collab 
+<!-- button bootstrap add collab
   <button class="btn btn-primary nav-item mt-3" *ngIf="!opened" (click)="open()">Ajouter un Collaborateur</button>
 -->
 <div class="button-center">
@@ -35,11 +35,11 @@
             </div>
             <div class="col-md-6 mt-3">
               <label for="inputAddress2" class="form-label">Date Début</label>
-              <input type="text" formControlName="dateDebut" class="form-control" id="inputAddress2">
+              <input type="text" formControlName="dateEntreeGroupe" class="form-control" id="inputAddress2">
             </div>
             <div class="col-md-6 mt-3">
               <label for="inputCity" class="form-label">Date Fin</label>
-              <input type="text" formControlName="dateFin" class="form-control" id="inputCity">
+              <input type="text" formControlName="dateSortieGroupe" class="form-control" id="inputCity">
             </div>
             <div class="col-md-2 mt-4">
               <label for="inputState" class="form-label">Type Collaborateur</label>
@@ -65,7 +65,7 @@
       </kendo-dialog-actions>
     </kendo-dialog>
 
-<!-- Liste Collaborateur Bootstrap 
+<!-- Liste Collaborateur Bootstrap
 
 <table class="table mt-3">
     <thead>
@@ -103,44 +103,44 @@
 
 <!-- grid kendo-->
 
-<kendo-grid 
+<kendo-grid
         [kendoGridBinding]="collaborateurData"
         [resizable]="true"
-        [filterable]="true" 
+        [filterable]="true"
         [sortable]="true"
         [pageable]=true
         [pageSize]="10">
-  <kendo-grid-column field="matricule">
+  <kendo-grid-column field="Matricule">
     <ng-template kendoGridCellTemplate let-collaborateur>
       {{ collaborateur.matricule }}
     </ng-template>
   </kendo-grid-column>
-  <kendo-grid-column field="nom">
+  <kendo-grid-column field="Nom">
     <ng-template kendoGridCellTemplate let-collaborateur>
       {{ collaborateur.nom }}
     </ng-template>
   </kendo-grid-column>
-  <kendo-grid-column field="prenom">
+  <kendo-grid-column field="Prénom">
     <ng-template kendoGridCellTemplate let-collaborateur>
       {{ collaborateur.prenom }}
     </ng-template>
   </kendo-grid-column>
-  <kendo-grid-column field="dateDebut">
+  <kendo-grid-column field="Date Entrée Groupe">
     <ng-template kendoGridCellTemplate let-collaborateur>
       {{ collaborateur.dateDebut }}
     </ng-template>
   </kendo-grid-column>
-  <kendo-grid-column field="dateFin">
+  <kendo-grid-column field="Date Sortie Groupe">
     <ng-template kendoGridCellTemplate let-collaborateur>
       {{ collaborateur.dateFin }}
     </ng-template>
   </kendo-grid-column>
-  <kendo-grid-column field="typeCollaborateur">
+  <kendo-grid-column field="Type Collaborateur">
     <ng-template kendoGridCellTemplate let-collaborateur>
       {{ collaborateur.typeCollaborateur }}
     </ng-template>
   </kendo-grid-column>
-  <kendo-grid-column field="section">
+  <kendo-grid-column field="Section">
     <ng-template kendoGridCellTemplate let-collaborateur>
       {{ collaborateur.section }}
     </ng-template>
@@ -160,4 +160,6 @@
     </div>
     </ng-template>
 </kendo-grid-column>
+<kendo-grid-messages [pagerOf]="'sur'" [pagerItems]="'collaborateurs'">
+</kendo-grid-messages>
 </kendo-grid>

@@ -1,6 +1,233 @@
 
-  
+
 kendo-avatar{
     height: 100px;
     width: 100px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-columns: 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "avatar identification identification identification"
+    "societeDates societeDates coordonnees coordonnees"
+    "societeDates societeDates coordonnees coordonnees";
+}
+
+.avatar { grid-area: avatar; }
+
+.identification {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 0.1fr 0.1fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". identificationRow1"
+    "identificationTitle ."
+    ". identificationRow2";
+  grid-area: identification;
+}
+
+.identificationRow1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "identificationRow1Label1 identificationRow1Label2 identificationRow1Label3 identificationRow1Label4"
+    "identificationRow1text1 identificationRow1text2 identificationRow1text3 identificationRow1text4";
+  grid-area: identificationRow1;
+}
+
+.identificationRow1Label1 { grid-area: identificationRow1Label1; }
+
+.identificationRow1Label2 { grid-area: identificationRow1Label2; }
+
+.identificationRow1Label3 { grid-area: identificationRow1Label3; }
+
+.identificationRow1Label4 { grid-area: identificationRow1Label4; }
+
+.identificationRow1text1 { grid-area: identificationRow1text1; }
+
+.identificationRow1text2 { grid-area: identificationRow1text2; }
+
+.identificationRow1text3 { grid-area: identificationRow1text3; }
+
+.identificationRow1text4 { grid-area: identificationRow1text4; }
+
+.identificationRow2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "identificationRow2Label1 identificationRow2Label2 identificationRow2Label3 identificationRow2Label4"
+    "identificationRow2text1 identificationRow2text2 identificationRow2text3 identificationRow2text4";
+  grid-area: identificationRow2;
+}
+
+.identificationRow2text1 { grid-area: identificationRow2text1; }
+
+.identificationRow2text2 { grid-area: identificationRow2text2; }
+
+.identificationRow2text3 { grid-area: identificationRow2text3; }
+
+.identificationRow2text4 { grid-area: identificationRow2text4; }
+
+.identificationRow2Label1 { grid-area: identificationRow2Label1; }
+
+.identificationRow2Label2 { grid-area: identificationRow2Label2; }
+
+.identificationRow2Label3 { grid-area: identificationRow2Label3; }
+
+.identificationRow2Label4 { grid-area: identificationRow2Label4; }
+
+.identificationTitle { grid-area: identificationTitle; }
+
+.societeDates {
+  display: grid;
+  grid-template-columns: 1.5fr 0.1fr 1.5fr;
+  grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "societeDatesTitle societeDatesTitle societeDatesTitle"
+    "societeDatesCol1 . SocieteDateCol2"
+    "societeDatesCol1 . SocieteDateCol2"
+    "societeDatesCol1 . SocieteDateCol2";
+  grid-area: societeDates;
+}
+
+.societeDatesTitle { grid-area: societeDatesTitle; }
+
+.societeDatesCol1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "societeDatesCol1Label1"
+    "societeDatesCol1text1"
+    "societeDatesCol1Label2"
+    "societeDatesCol1text2"
+    "SocieteDatesCol1Label3"
+    "SocieteDatesCol1text3";
+  grid-area: societeDatesCol1;
+}
+
+.societeDatesCol1Label1 { grid-area: societeDatesCol1Label1; }
+
+.societeDatesCol1text1 { grid-area: societeDatesCol1text1; }
+
+.societeDatesCol1Label2 { grid-area: societeDatesCol1Label2; }
+
+.societeDatesCol1text2 { grid-area: societeDatesCol1text2; }
+
+.SocieteDatesCol1Label3 { grid-area: SocieteDatesCol1Label3; }
+
+.SocieteDatesCol1text3 { grid-area: SocieteDatesCol1text3; }
+
+.SocieteDateCol2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "societeDatesCol2Label1"
+    "societeDatesCol2text1"
+    "societeDatesCol2Label2"
+    "societeDatesColtext2"
+    "."
+    ".";
+  grid-area: SocieteDateCol2;
+}
+
+.societeDatesCol2Label1 { grid-area: societeDatesCol2Label1; }
+
+.societeDatesCol2text1 { grid-area: societeDatesCol2text1; }
+
+.societeDatesCol2Label2 { grid-area: societeDatesCol2Label2; }
+
+.societeDatesColtext2 { grid-area: societeDatesColtext2; }
+
+.coordonnees {
+  display: grid;
+  grid-template-columns: 1.5fr 0.1fr 1.5fr;
+  grid-template-rows: 0.1fr 0.12fr 0.12fr fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "coordonneesTitle coordonneesTitle coordonneesTitle"
+    "coordonneesCol1 . coordonneesCol2"
+    "coordonneesCol1 . coordonneesCol2"
+    ". coordonneesNotes .";
+  grid-area: coordonnees;
+}
+
+.coordonneesTitle { grid-area: coordonneesTitle; }
+
+.coordonneesCol1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "coordonneesCol1Label1"
+    "coordonneesCol1text1"
+    "coordonneesCol1Label2"
+    "coordonneesCol1text2";
+  grid-area: coordonneesCol1;
+}
+
+.coordonneesCol1Label1 { grid-area: coordonneesCol1Label1; }
+
+.coordonneesCol1text1 { grid-area: coordonneesCol1text1; }
+
+.coordonneesCol1Label2 { grid-area: coordonneesCol1Label2; }
+
+.coordonneesCol1text2 { grid-area: coordonneesCol1text2; }
+
+.coordonneesCol2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "coordonneesCol2Label1"
+    "coordonneesCol2text1"
+    "coordonneesCol2Label2"
+    "coordonneesCol2text2";
+  grid-area: coordonneesCol2;
+}
+
+.coordonneesCol2Label1 { grid-area: coordonneesCol2Label1; }
+
+.coordonneesCol2text1 { grid-area: coordonneesCol2text1; }
+
+.coordonneesCol2Label2 { grid-area: coordonneesCol2Label2; }
+
+.coordonneesCol2text2 { grid-area: coordonneesCol2text2; }
+
+.coordonneesNotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+  grid-area: coordonneesNotes;
 }

@@ -1,12 +1,12 @@
-export interface ContratInfo {
-    typeCollaborateur: string;
-    idTypeCollaborateur: Number;
-    typeContrat: string;
-    dateDebut: Date;
-    dateFin: Date;
-    societe: string;
-    section: string;
-    numContrat: Number;
-    mission: string;
-    fonction: string;
+export class ContratModel {
+  matricule: string = '';
+  idContrat : Number = 0;
+  typeContrat: string = '';
+  dateDebut: string = '';
+  dateFin: string = '';
+  societe: string = '';
+  section: string = '';
+  numContrat: Number = 0;
+  mission: string = '';
+  fonction: string = ''
 }

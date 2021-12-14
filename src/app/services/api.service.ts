@@ -6,7 +6,7 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  
+
 
   constructor(private http : HttpClient) { }
 
@@ -33,6 +33,13 @@ export class ApiService {
 
   deleteCollaborateur(id: number){
     return this.http.delete<any>("http://localhost:3000/collaborateurs/"+id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  getAllContrats(){
+    return this.http.get<any>("http://localhost:3000/contrats")
     .pipe(map((res:any)=>{
       return res;
     }))
