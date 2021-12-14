@@ -1,28 +1,30 @@
-<div class="grid-applications">
-    <!-- Création du bloc Grid de Kendo qui encadre tous le contenu avec ses paramètres -->
-    <kendo-grid 
-        [kendoGridBinding]="applications"
-        [resizable]="true"
-        [sortable]="true"
-        [pageable]=true
-        [pageSize]="10">
-
-        <!-- Début création des colonnes du Grid -->
-
-        <!-- Création de la colonne Matricule dans le tableau -->
-        <kendo-grid-column field="nomApplication" title="Applications">
-        </kendo-grid-column>
-
-        <!-- Création de la colonne Nom dans le tableau -->
-        <kendo-grid-column field="droit" title="Droits">
-        </kendo-grid-column>
-
-
-        <!-- Fin création des colonnes du Grid -->
-
-        <!-- Modification du text du pager -->
-        <kendo-grid-messages [pagerOf]="'sur'" [pagerItems]="'applications'">
-        </kendo-grid-messages>
-
-    </kendo-grid>
+<div class="grid-application">
+  <!-- Création du bloc Grid de Kendo qui encadre tous le contenu avec ses paramètres -->
+  <kendo-grid
+      [kendoGridBinding]="applicationsData"
+      [resizable]="true"
+      [filterable]="true"
+      [sortable]="true"
+      [pageable]=true
+      [pageSize]="10">
+<kendo-grid-column field="Matricule">
+  <ng-template kendoGridCellTemplate let-application>
+    {{ application.matricule }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Nom Application">
+  <ng-template kendoGridCellTemplate let-application>
+    {{ application.nomApplication }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Droits">
+  <ng-template kendoGridCellTemplate let-application>
+    {{ application.droit }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-messages [pagerOf]="'sur'" [pagerItems]="'applications'">
+</kendo-grid-messages>
+</kendo-grid>
 </div>
+
+

@@ -106,60 +106,50 @@
 <kendo-grid
         [kendoGridBinding]="collaborateurData"
         [resizable]="true"
-        [filterable]="true"
         [sortable]="true"
         [pageable]=true
-        [pageSize]="10">
+        [pageSize]="15"
+        class="table">
   <kendo-grid-column field="Matricule">
-    <ng-template kendoGridCellTemplate let-collaborateur>
-      {{ collaborateur.matricule }}
+    <ng-template kendoGridCellTemplate let-collaborateur >
+      <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]">{{ collaborateur.matricule }}</a>
     </ng-template>
   </kendo-grid-column>
   <kendo-grid-column field="Nom">
     <ng-template kendoGridCellTemplate let-collaborateur>
-      {{ collaborateur.nom }}
+      <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]">{{ collaborateur.nom }}</a>
     </ng-template>
   </kendo-grid-column>
   <kendo-grid-column field="Prénom">
     <ng-template kendoGridCellTemplate let-collaborateur>
-      {{ collaborateur.prenom }}
+      <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]">{{ collaborateur.prenom }}</a>
     </ng-template>
   </kendo-grid-column>
   <kendo-grid-column field="Date Entrée Groupe">
     <ng-template kendoGridCellTemplate let-collaborateur>
-      {{ collaborateur.dateDebut }}
+      <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]">{{ collaborateur.dateDebut }}</a>
     </ng-template>
   </kendo-grid-column>
   <kendo-grid-column field="Date Sortie Groupe">
     <ng-template kendoGridCellTemplate let-collaborateur>
-      {{ collaborateur.dateFin }}
+      <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]">{{ collaborateur.dateFin }}</a>
     </ng-template>
   </kendo-grid-column>
   <kendo-grid-column field="Type Collaborateur">
     <ng-template kendoGridCellTemplate let-collaborateur>
-      {{ collaborateur.typeCollaborateur }}
+      <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]">{{ collaborateur.typeCollaborateur }}</a>
     </ng-template>
   </kendo-grid-column>
   <kendo-grid-column field="Section">
     <ng-template kendoGridCellTemplate let-collaborateur>
-      {{ collaborateur.section }}
+      <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]">{{ collaborateur.section }}</a>
     </ng-template>
   </kendo-grid-column>
   <kendo-grid-column field="Société">
     <ng-template kendoGridCellTemplate let-collaborateur>
-      {{ collaborateur.societe }}
+      <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]">{{ collaborateur.societe }}</a>
     </ng-template>
   </kendo-grid-column>
-  <kendo-grid-column field="Actions">
-    <!-- Suppression du filtre pour cette colonne -->
-    <ng-template kendoGridFilterCellTemplate ></ng-template>
-    <!-- Création d'un bouton Modifier -->
-    <ng-template kendoGridCellTemplate let-collaborateur>
-      <div class="details-collaborateur">
-        <a [routerLink]="['collaborateurs', collaborateur.typeCollaborateur, collaborateur.matricule]"><button kendoButton [primary]="true" look="default" >Afficher détails</button></a>
-    </div>
-    </ng-template>
-</kendo-grid-column>
 <kendo-grid-messages [pagerOf]="'sur'" [pagerItems]="'collaborateurs'">
 </kendo-grid-messages>
 </kendo-grid>

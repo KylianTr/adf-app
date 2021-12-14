@@ -1,1 +1,55 @@
-<p>interimaire-gestion-comptes works!</p>
+<div class="grid-compte">
+  <!-- Création du bloc Grid de Kendo qui encadre tous le contenu avec ses paramètres -->
+  <kendo-grid
+      [kendoGridBinding]="comptesData"
+      [resizable]="true"
+      [filterable]="true"
+      [sortable]="true"
+      [pageable]=true
+      [pageSize]="10">
+<kendo-grid-column field="Matricule">
+  <ng-template kendoGridCellTemplate let-compte>
+    {{ compte.matricule }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Nom Logiciel">
+  <ng-template kendoGridCellTemplate let-compte>
+    {{ compte.nomLogiciel }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Identifiant">
+  <ng-template kendoGridCellTemplate let-compte>
+    {{ compte.identifiant }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Mot de passe">
+  <ng-template kendoGridCellTemplate let-compte>
+    {{ compte.mdp }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Date Ouverture du Compte">
+  <ng-template kendoGridCellTemplate let-compte>
+    {{ compte.dateOuverture }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Date expiration du Compte">
+  <ng-template kendoGridCellTemplate let-compte>
+    {{ compte.dateExpiration }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Modifiable">
+  <ng-template kendoGridCellTemplate let-compte>
+    {{ compte.modifiable }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="Mission">
+  <ng-template kendoGridCellTemplate let-compte>
+    {{ compte.mission }}
+  </ng-template>
+</kendo-grid-column>
+<kendo-grid-messages [pagerOf]="'sur'" [pagerItems]="'comptes'">
+</kendo-grid-messages>
+</kendo-grid>
+</div>
+
+

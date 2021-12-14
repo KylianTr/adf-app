@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
+import { map } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApplicationModel } from 'src/app/models/app';
 
 @Component({
   selector: 'prestataire-liste-applications',
@@ -8,18 +13,38 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PrestataireListeApplicationsComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
+  applicationModelObj : ApplicationModel = new ApplicationModel();
+  applicationsData !: any;
 
-  applications: any[] = [];
+  matricule: string;
 
-  getApplications(){
-    this.httpClient.get('https://api.jsonbin.io/b/61a4926501558c731ccaa8cb')
-      .subscribe((applications: any)=> {
-        this.applications = applications;
-      });
+  formValue!: FormGroup;
+
+  constructor(private api: ApiService, private formbuilder: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute, private http : HttpClient) {
+    this.matricule = this.activatedRoute.snapshot.params['matricule'];
   }
 
-  ngOnInit(): void {
+  getMatriculeapplications(){
+    return this.http.get<any>("http://localhost:3000/applications?matricule="+this.matricule)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  ngOnInit(): void{
+    this.formValue = this.formbuilder.group({
+      matricule : [''],
+      nomApplication : [''],
+      droit : ['']
+    })
+    this.getLesapplicationsDuMatricule();
+  }
+
+  getLesapplicationsDuMatricule(){
+    this.getMatriculeapplications()
+    .subscribe(res=>{
+      this.applicationsData = res;
+    })
   }
 
 }
